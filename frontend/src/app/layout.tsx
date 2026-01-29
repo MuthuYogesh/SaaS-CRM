@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import ThemeProviderWrapper from "./theme/ThemeProvider";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,9 +30,11 @@ export default function RootLayout({
         <meta name="emotion-insertion-point" content="" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ThemeProviderWrapper>
-          {children}
-        </ThemeProviderWrapper>
+        <AppRouterCacheProvider options={{enableCssLayer: true}}>
+          <ThemeProviderWrapper>
+            {children}
+          </ThemeProviderWrapper>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

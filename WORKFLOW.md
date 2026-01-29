@@ -48,3 +48,8 @@
 - Hydration errors fully resolved
 - Stable SSR and client hydration behavior achieved
 - MUI integration aligned with Next.js App Router best practices
+
+### Final Resolution
+- Replaced manual Emotion cache handling with MUI’s official App Router adapter
+- Adopted `AppRouterCacheProvider` to ensure deterministic style injection
+- Eliminated hydration mismatches caused by CSS-in-JS timing differences
